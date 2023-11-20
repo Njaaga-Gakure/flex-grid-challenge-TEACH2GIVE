@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+html {
+  font-size: 16px;
+}
+
+:root {
+  /* ============ Colors =================== */
+  /* ### Primary */
+
+  --blue: hsl(246, 80%, 60%);
+  --light-orange: hsl(15, 100%, 70%); /* (work) */
+  --soft-blue: hsl(195, 74%, 62%); /* (play) */
+  --light-red: hsl(348, 100%, 68%); /*  (study) */
+  --lime-green: hsl(145, 58%, 55%); /* (exercise) */
+  --violet: hsl(264, 64%, 52%); /*  (social) */
+  --soft-orange: hsl(43, 84%, 65%); /* (self care) */
+
+  /* ### Neutral */
+
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+
+  /* =========== Other Vars ================= */
+
+  --transition: all 0.3s ease-in-out;
+  --letter-spacing: 1px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2;
+  font-weight: 500;
+}
+h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+img {
+  display: block;
+  object-fit: cover;
+}
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+.content--center {
+  width: 90vw;
+  max-width: 1200px;
+  margin: 5rem auto;
+}
+
+/* ======= Project CSS ======  */
+.tracker {
+  /* background-color: azure; */
+  display: grid;
+  gap: 1.5rem;
+}
+.profile {
+  background-color: var(--dark-blue);
+  border-radius: 12px;
+}
+.profile__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--blue);
+  padding: 2rem;
+  border-radius: 10px;
+}
+.profile__header > div > span {
+  font-size: 0.8rem;
+  color: var(--pale-blue);
+  letter-spacing: var(--letter-spacing);
+}
+.profile__name {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: capitalize;
+  color: var(--pale-blue);
+}
+.profile__img {
+  width: 70px;
+  height: 70px;
+  border: 3px solid var(--pale-blue);
+  border-radius: 50%;
+}
+.profile__footer {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.tracking-duration {
+  text-transform: capitalize;
+  letter-spacing: var(--letter-spacing);
+  color: var(--desaturated-blue);
+}
+.tracking-duration--active {
+  color: var(--pale-blue);
+}
+.metric {
+  padding-top: 3rem;
+  background-color: magenta;
+  background-repeat: no-repeat;
+  background-position-x: 97%;
+  background-position-y: -15%;
+  border-radius: 12px;
+}
+.metrics {
+  display: grid;
+  gap: 1rem;
+  color: var(--pale-blue);
+}
+.metric > div {
+  background-color: var(--dark-blue);
+  border-radius: 10px;
+  padding: 2rem;
+}
+.metric--work {
+  background-image: url("./images/icon-work.svg");
+  background-color: var(--light-orange);
+}
+.metric--play {
+  background-image: url("./images/icon-play.svg");
+  background-color: var(--soft-blue);
+}
+.metric--study {
+  background-image: url("./images/icon-study.svg");
+  background-color: var(--light-red);
+}
+.metric--exercise {
+  background-position-y: -2%;
+  background-image: url("./images/icon-exercise.svg");
+  background-color: var(--lime-green);
+}
+.metric--social {
+  background-image: url("./images/icon-social.svg");
+  background-color: var(--violet);
+}
+.metric--self-care {
+  background-position-y: -10%;
+  background-image: url("./images/icon-self-care.svg");
+  background-color: var(--soft-orange);
+}
+.metric__header {
+  margin-bottom: 0.5rem;
+}
+.metric__header,
+.metric__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.metric__title {
+  text-transform: capitalize;
+  letter-spacing: var(--letter-spacing);
+}
+.metric__duration {
+  font-size: 1.75rem;
+  font-weight: 300;
+  letter-spacing: var(--letter-spacing);
+  margin: 0;
+}
+.metric__prev-duration {
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: capitalize;
+  letter-spacing: var(--letter-spacing);
+}
+@media (min-width: 800px) {
+  .tracker {
+    grid-template-columns: 1fr 3fr;
+    align-items: start;
+  }
+  .profile__header {
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+    padding-bottom: 5rem;
+  }
+  .profile__name span {
+    display: block;
+  }
+  .profile__footer {
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+  }
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .metric__duration {
+    font-size: 2.5rem;
+  }
+  .metric__title,
+  .metric__prev-duration {
+    font-size: 0.8rem;
+  }
+  .metric__body {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+@media (min-width: 1000px) {
+  .tracker {
+    align-items: stretch;
+  }
+  .metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
